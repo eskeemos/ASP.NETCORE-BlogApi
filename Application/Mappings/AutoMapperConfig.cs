@@ -16,6 +16,7 @@ namespace Application.Mappings
             {
                 c.CreateMap<Post, PostDto>();
                 c.CreateMap<CreatePostDto, Post>();
+                c.CreateMap<UpdatePostDto, Post>();
             })
             .CreateMapper();
     }

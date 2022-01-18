@@ -37,5 +37,12 @@ namespace SocialMedia.Controllers
             return Created($"api/posts/{post.Id}", post);
 
         }
+
+        [HttpPut][SwaggerOperation(Summary = "Update a existing post")]
+        public IActionResult Update(UpdatePostDto model)
+        {
+            postService.UpdatePost(model);
+            return NoContent();
+        }
     }
 }
