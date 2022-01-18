@@ -1,4 +1,5 @@
-﻿using Application.Interfaces;
+﻿using Application.Dto;
+using Application.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 
@@ -22,11 +23,19 @@ namespace SocialMedia.Controllers
         }
 
         [HttpGet("${id}")][SwaggerOperation(Summary = "Retrieves a specific post by unique id")]
-        public ActionResult getById([FromRoute] int id)
+        public IActionResult GetById([FromRoute] int id)
         {
             var post = postService.GetPostById(id); 
             if (post is null) return NotFound();
             return Ok(post);
+        }
+
+        [HttpPost][SwaggerOperation(Summary = "Create a new post")] 
+        public IActionResult Create(CreatePostDto model)
+        {
+            var post = postService.CreatePost(model);
+            return Created($"api/posts/{post.Id}", post);
+
         }
     }
 }
