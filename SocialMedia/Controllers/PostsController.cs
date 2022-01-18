@@ -22,7 +22,7 @@ namespace SocialMedia.Controllers
             return Ok(postService.GetAllPosts());
         }
 
-        [HttpGet("${id}")][SwaggerOperation(Summary = "Retrieves a specific post by unique id")]
+        [HttpGet("{id}")][SwaggerOperation(Summary = "Retrieves a specific post by unique id")]
         public IActionResult GetById([FromRoute] int id)
         {
             var post = postService.GetPostById(id); 
@@ -42,6 +42,13 @@ namespace SocialMedia.Controllers
         public IActionResult Update(UpdatePostDto model)
         {
             postService.UpdatePost(model);
+            return NoContent();
+        }
+
+        [HttpDelete("{id}")][SwaggerOperation(Summary = "Delete a post")]
+        public IActionResult Delete([FromRoute] int id)
+        {
+            postService.DeletePost(id);
             return NoContent();
         }
     }
