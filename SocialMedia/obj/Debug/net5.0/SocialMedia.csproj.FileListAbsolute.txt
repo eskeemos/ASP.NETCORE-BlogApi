@@ -33,3 +33,5 @@ C:\Users\User\Desktop\Project\SocialMedia\obj\Debug\net5.0\SocialMedia.dll
 C:\Users\User\Desktop\Project\SocialMedia\obj\Debug\net5.0\ref\SocialMedia.dll
 C:\Users\User\Desktop\Project\SocialMedia\obj\Debug\net5.0\SocialMedia.pdb
 C:\Users\User\Desktop\Project\SocialMedia\obj\Debug\net5.0\SocialMedia.genruntimeconfig.cache
+C:\Users\User\Desktop\Project\SocialMedia\bin\Debug\net5.0\AutoMapper.dll
+C:\Users\User\Desktop\Project\SocialMedia\bin\Debug\net5.0\Swashbuckle.AspNetCore.Annotations.dll
