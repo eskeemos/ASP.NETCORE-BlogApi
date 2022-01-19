@@ -1,5 +1,6 @@
 ﻿using Domain.Entities;
 using Domain.Interfaces;
+using Infrastructure.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,38 +11,39 @@ namespace Infrastructure.Repositories
 {
     public class PostRepository : IPostRepository
     {
-        private static readonly ISet<Post> posts = new HashSet<Post>()
+        private readonly SocialMediaContext socialMedia;
+
+        public PostRepository(SocialMediaContext socialMedia)
         {
-            new Post(1, "Title1", "Content1"),
-            new Post(2, "Title2", "Content2"),
-            new Post(3, "Title3", "Content3")
-        };
+            this.socialMedia = socialMedia;
+        }
 
         public IEnumerable<Post> GetAll()
         {
-            return posts;
-        }
+            return socialMedia.Posts;
+        }   
 
         public Post GetById(int id)
         {
-            return posts.SingleOrDefault(x => x.Id == id);
+            return socialMedia.Posts.SingleOrDefault(x => x.Id == id);
         }
         public Post Create(Post model)
         {
-            model.Id = posts.Count() + 1;
-            model.LastModified = DateTime.UtcNow;
-            posts.Add(model);
+            socialMedia.Posts.Add(model);
+            socialMedia.SaveChanges();
             return model;
         }
 
         public void Update(Post model)
         {
-            model.LastModified = DateTime.UtcNow;
+            socialMedia.Posts.Update(model);
+            socialMedia.SaveChanges();
         }
 
         public void Delete(Post model)
         {
-            posts.Remove(model);
+            socialMedia.Posts.Remove(model);
+            socialMedia.SaveChanges();
         }
         
     }

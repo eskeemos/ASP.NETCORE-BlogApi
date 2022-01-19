@@ -15,3 +15,6 @@ C:\Users\User\Desktop\Project\Infrastructure\obj\Debug\net5.0\Infrastructure.csp
 C:\Users\User\Desktop\Project\Infrastructure\obj\Debug\net5.0\Infrastructure.dll
 C:\Users\User\Desktop\Project\Infrastructure\obj\Debug\net5.0\ref\Infrastructure.dll
 C:\Users\User\Desktop\Project\Infrastructure\obj\Debug\net5.0\Infrastructure.pdb
+C:\Users\User\Desktop\Project\Infrastructure\bin\Debug\net5.0\Infrastructure.runtimeconfig.json
+C:\Users\User\Desktop\Project\Infrastructure\bin\Debug\net5.0\Infrastructure.runtimeconfig.dev.json
+C:\Users\User\Desktop\Project\Infrastructure\obj\Debug\net5.0\Infrastructure.genruntimeconfig.cache
